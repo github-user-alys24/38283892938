@@ -17,8 +17,11 @@ sudo apt-get install dos2unix
 
 Localhost routes
 website > localhost:8081
+
 preprocessing > localhost:8080
+
 inference > localhost:8083
+
 prediction > localhost:8084
 
 
