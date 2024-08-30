@@ -1,2 +1,2 @@
-# projects
-Hosting all my previous projects for reference
+# Computer Vision - gymAI
+#### Year 2 Project
