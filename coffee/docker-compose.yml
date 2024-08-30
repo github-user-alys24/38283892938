@@ -1,0 +1,51 @@
+version: '3'
+
+services:
+  preprocessing-service:
+    build: 
+        context: ./script
+        dockerfile: dockerfile-preprocessing
+    volumes:
+      - ./raw_data:/raw_data
+      - ./preprocessed_data:/preprocessed_data
+    ports:
+      - 8080:80
+
+  training-service:
+    build: 
+        context: ./script
+        dockerfile: dockerfile-training
+    volumes:
+      - ./preprocessed_data:/preprocessed_data
+      - ./model:/model
+    ports:
+      - 8082:80
+      
+  inference-service:
+    build: 
+        context: ./script
+        dockerfile: dockerfile-inference
+    volumes:
+      - ./preprocessed_data:/preprocessed_data
+      - ./model:/model
+    ports:
+      - 8083:80
+      
+  prediction-service:
+    build: 
+        context: ./script
+        dockerfile: dockerfile-prediction
+    volumes:
+      - ./preprocessed_data:/preprocessed_data
+      - ./model:/model
+    ports:
+      - 8084:80
+
+  website:
+    image: php:apache
+    volumes:
+      - ./template:/var/www/html
+    ports:
+      - 8081:80
+    depends_on:
+      - preprocessing-service
