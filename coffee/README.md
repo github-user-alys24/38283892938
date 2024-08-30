@@ -14,8 +14,8 @@ cd /mnt/c/Users/your-user/your-file-path/coffee
 sudo apt-get install dos2unix
 ./run.sh 					# Runs the entire deployment
 ##### Access the application through localhost:8081
+### Localhost routes
 
-Localhost routes
 website > localhost:8081
 
 preprocessing > localhost:8080
