@@ -13,7 +13,7 @@ cd /mnt/c/Users/your-user/your-file-path/coffee
 ##### If unable to run ./run.sh directly, download dos2unix
 sudo apt-get install dos2unix
 ./run.sh 					# Runs the entire deployment
->> Access the application through localhost:8081
+##### Access the application through localhost:8081
 
 Localhost routes
 website > localhost:8081
