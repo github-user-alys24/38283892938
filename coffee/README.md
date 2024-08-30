@@ -5,12 +5,12 @@ Built with K8s cluster
 > ports 8080:80 were mainly used
 
 User's guide
-# BEFORE RUNNING, change the file directories in the run.sh file
+BEFORE RUNNING, change the file directories in the run.sh file
 # Running with run.sh
-# In WSL command line,
+##### In WSL command line,
 cd /mnt/c/Users/your-user/your-file-path/coffee
 ./run.sh
-# If unable to run ./run.sh directly, download dos2unix
+##### If unable to run ./run.sh directly, download dos2unix
 sudo apt-get install dos2unix
 ./run.sh 					# Runs the entire deployment
 >> Access the application through localhost:8081
