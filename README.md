@@ -21,4 +21,4 @@ Notebook consistent of
 
 
 ## Machine Learning
-Scope of project - Build 
+Decision Tree Classifier
