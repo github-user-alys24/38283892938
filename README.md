@@ -18,3 +18,7 @@ Notebook consistent of
 - CNN model ; reference CNN model, optimized CNN model
 - transfer learning model ; reference transfer learning model with vgg16 + optimization and finetuning
 - summary and comparison
+
+
+## Machine Learning
+Scope of project - Build 
