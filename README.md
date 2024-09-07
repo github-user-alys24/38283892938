@@ -1,7 +1,8 @@
 # Deep learning
 #### Year 2 Project
 ### Files in branch
-DL_CNN.ipynb & DT_parkinsons.ipynb
+> DL_CNN.ipynb - deeplearning CNN models
+> DT_parkinsons.ipynb - machinelearning decision tree and random forest classifiers
 
 ## Deep Learning
 Scope of project - develop TWO deep learning models (CNN and Transferred Learning) for the classification task with the given dataset
