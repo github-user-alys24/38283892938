@@ -13,7 +13,7 @@ Characteristics of dataset
 - train size - 2000 images per class, 8,000 in total in the train folder
 - test size - 500 images per class, 2,000 in total in the test folder
 
-Sections consistent of
+Notebook consistent of
 - data prep ; perform train/test/val split, normalize and put thru datagen
 - CNN model ; reference CNN model, optimized CNN model
 - transfer learning model ; reference transfer learning model with vgg16 + optimization and finetuning
