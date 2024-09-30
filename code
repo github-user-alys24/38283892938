@@ -1,14 +1,98 @@
-<section class="container">
-	<div class="slider-wrapper">
-		<div class="slider">
-			<img id="slide-1" src="https://images.unsplash.com/photo-1656464868371-602be27fd4c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80" alt="3D rendering of an imaginary orange planet in space" />
-			<img id="slide-2" src="https://images.unsplash.com/photo-1657586640569-4a3d4577328c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80" alt="3D rendering of an imaginary green planet in space" />
-			<img id="slide-3" src="https://images.unsplash.com/photo-1656077217715-bdaeb06bd01f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80" alt="3D rendering of an imaginary blue planet in space" />
-		</div>
-		<div class="slider-nav">
-			<a href="#slide-1"></a>
-			<a href="#slide-2"></a>
-			<a href="#slide-3"></a>
-		</div>
-	</div>
-</section>
+const slides = document.querySelectorAll(".slides img");
+let slideIndex = 0;
+let intervalId = null;
+
+document.addEventListener("DOMContentLoaded", initializeSlider);
+
+function initializeSlider(){
+    if(slides.length > 0){
+        slides[slideIndex].classList.add("displaySlide");
+        intervalId = setInterval(nextSlide, 5000);
+    }
+}
+
+function showSlide(index){
+    if(index >= slides.length){
+        slideIndex = 0;
+    }
+    else if(index < 0){
+        slideIndex = slides.length - 1;
+    }
+
+    slides.forEach(slide => {
+        slide.classList.remove("displaySlide");
+    });
+    slides[slideIndex].classList.add("displaySlide");
+}
+
+function prevSlide(){
+    clearInterval(intervalId);
+    slideIndex--;
+    showSlide(slideIndex);
+}
+
+function nextSlide(){
+    slideIndex++;
+    showSlide(slideIndex);
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="slider">
+        <div class="slides">
+            <img class="slide" src="image1.jpg" alt="Image #1">
+            <img class="slide" src="image2.jpg" alt="Image #2">
+            <img class="slide" src="image3.jpg" alt="Image #3">
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094</button>
+        <button class="next" onclick="nextSlide()">&#10095</button>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
+
+.slider{
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+.slider img{
+    width: 100%;
+    display: none;
+}
+img.displaySlide{
+    display: block;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+.slider button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    padding: 10px 15px;
+    background-color: hsla(0, 0%, 0%, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.prev{
+    left: 0;
+}
+.next{
+    right: 0;
+}
+@keyframes fade {
+    from {opacity: .5}
+    to {opacity: 1}
+}
